@@ -15,7 +15,7 @@ struct Task_ProgressApp: App {
         WindowGroup {
             ContentView()
         }
-        // modelContainer(for:) crée la base de données SwiftData automatiquement.
+        // modelContainer(for:) crée le ModelContainer (la base de données) et le ModelContext.
         .modelContainer(for: [Task.self])
     }
 }

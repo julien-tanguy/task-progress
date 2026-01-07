@@ -63,9 +63,16 @@ struct AddTaskView: View {
         }
     }
     
+    // MARK: - Actions
+    
+    func addTask(title: String){
+        let addTaskInsert = Task(title: title, isDone: false)
+        modelContext.insert(addTaskInsert)
+        try? modelContext.save()
+    }
+    
     func handleSave(){
-        let dataManager = DataManager(context: modelContext)
-        dataManager.addTask(title: title)
+        addTask(title: title)
         dismiss()
     }
 }
